@@ -21,12 +21,22 @@ with open('airports.csv', 'r') as airportsfile:
 
 #print(city)
 
-url = 'https://api.openweathermap.org/data/2.5/weather?q={}&appid=0c45f909abe580009e821ecdb47cfa43&units=metric'.format(city)
+#url = 'https://api.openweathermap.org/data/2.5/weather?q={}&appid=0c45f909abe580009e821ecdb47cfa43&units=metric'.format(city)
+
+url = 'https://api.weather.gov/points/39.7456,-97.0892'
 
 res = requests.get(url)
 
 data = res.json()
 
-temp = data['main']['temp']
+myurl = data['properties']['observationStations']
 
-print(airport_name + ' current temperature: ' + str(temp))
+res = requests.get(myurl)
+
+data = res.json()
+
+pprint(data)
+
+#temp = data['main']['temp']
+
+#print(airport_name + ' current temperature: ' + str(temp))
