@@ -1,6 +1,7 @@
 #0c45f909abe580009e821ecdb47cfa43
 import requests
 import csv
+import math
 from pprint import pprint
 
 airport_name = input('enter the airport name: ')
@@ -47,7 +48,7 @@ count = 1
 
 for elements in data['features']:
 
-	print(elements['properties']['timestamp'] + '   ' + str(elements['properties']['temperature']['value']) + ' Celsius')
+	print('date: ' + elements['properties']['timestamp'][0:10] + '  ' + 'time: '+ elements['properties']['timestamp'][11:16] + '  ' + 'temperature: ' + str(math.trunc(elements['properties']['temperature']['value'])) + ' Celsius')
 
 	count = count + 1
 
