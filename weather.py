@@ -5,7 +5,6 @@ from pprint import pprint
 
 airport_name = input('enter the airport name: ')
 
-city = ''
 
 with open('airports.csv', 'r') as airportsfile:
 
@@ -13,9 +12,11 @@ with open('airports.csv', 'r') as airportsfile:
 
 	for row in airportsreader:
 
-		if (row[3] == airport_name and row[10] != ''):
+		if row[3] == airport_name:
 
-			city = row[10]
+			latitude = row[4]
+
+			longtitude = row[5]
 
 			break
 
@@ -23,7 +24,7 @@ with open('airports.csv', 'r') as airportsfile:
 
 #url = 'https://api.openweathermap.org/data/2.5/weather?q={}&appid=0c45f909abe580009e821ecdb47cfa43&units=metric'.format(city)
 
-url = 'https://api.weather.gov/points/39.7456,-97.0892'
+url = 'https://api.weather.gov/points/' + str(latitude) + ',' + str(longtitude)
 
 res = requests.get(url)
 
@@ -35,7 +36,26 @@ res = requests.get(myurl)
 
 data = res.json()
 
-pprint(data)
+observationurl = data['features'][0]['id'] + '/observations'
+
+res = requests.get(observationurl)
+
+data = res.json()
+
+#print(data['features'])
+count = 1
+
+for elements in data['features']:
+
+	print(elements['properties']['timestamp'] + '   ' + str(elements['properties']['temperature']['value']) + ' Celsius')
+
+	count = count + 1
+
+	if count > 24:
+
+		break
+
+#pprint(data)
 
 #temp = data['main']['temp']
 
