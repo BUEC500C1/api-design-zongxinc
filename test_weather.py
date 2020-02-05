@@ -10,7 +10,7 @@ def test_1(monkeypatch):
 	#weather.input = input_values
 	monkeypatch.setattr('sys.stdin', airport_name)
 
-	assert weather.main() != 'no airport found'
+	assert main() != 'no airport found'
 
 #airport_name = StringIO('jkhkzdhkfhds')
 
