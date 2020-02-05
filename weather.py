@@ -54,13 +54,13 @@ def weather():
 
 count = 1
 
-if weather(airport_name) == 'no airport found':
+if weather() == 'no airport found':
 	
 	print('no airport found')
 
 else:
 
-	for elements in weather(airport_name):
+	for elements in weather():
 
 		print('date: ' + elements['properties']['timestamp'][0:10] + '  ' + 'time: '+ elements['properties']['timestamp'][11:16] + '  ' + 'temperature: ' + str(math.trunc(elements['properties']['temperature']['value'])) + ' Celsius')
 
