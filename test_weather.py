@@ -7,7 +7,7 @@ def test_1(monkeypatch):
 
 	monkeypatch.setattr('sys.stdin', airport_name)
 
-	assert weather('York Airport') != 'no airport found'
+	assert weather() != 'no airport found'
 
 #airport_name = StringIO('jkhkzdhkfhds')
 
