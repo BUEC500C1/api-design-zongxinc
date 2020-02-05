@@ -1,5 +1,5 @@
 from io import StringIO
-from weather import weather
+from weather import main
 
 airport_name = StringIO('York Airport\n')
 
