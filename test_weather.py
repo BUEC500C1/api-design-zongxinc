@@ -7,7 +7,7 @@ def test_1(monkeypatch):
 
 	input_values = 'York Airport'
  
-    app.input = mock_input
+    app.input = input_values
 	#monkeypatch.setattr('sys.stdin', airport_name)
 
 	assert weather() != 'no airport found'
