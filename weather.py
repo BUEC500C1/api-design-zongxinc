@@ -48,6 +48,8 @@ def weather():
 
 	data = res.json()
 
+	return data['features']
+
 	count = 1
 
 	if weather() == 'no airport found':
@@ -65,6 +67,8 @@ def weather():
 			if count > 24:
 
 				break
-	return 1
+
+if __name__ == '__main__':
+	weather()
 
 #return 1
