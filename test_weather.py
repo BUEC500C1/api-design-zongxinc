@@ -12,11 +12,11 @@ def test_1(monkeypatch):
 
 	assert main() != 'no airport found'
 
-airport_name = StringIO('jkhkzdhkfhds\n')
+airport_name1 = StringIO('jkhkzdhkfhds\n')
 
 def test_2(monkeypatch):
 	
-	monkeypatch.setattr('sys.stdin', airport_name)
+	monkeypatch.setattr('sys.stdin', airport_name1)
 
 	assert main() == 'no airport found'
 
