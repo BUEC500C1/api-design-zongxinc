@@ -1,10 +1,27 @@
+from io import StringIO
 from weather import weather
 
-def test():
-	weather.input() = lambda: 'York Airport'
+airport_name = StringIO('York Airport\n')
+
+def test_1(monkeypatch):
+
+	monkeypatch.setattr('sys.stdin', airport_name)
+
 	assert weather('York Airport') != 'no airport found'
-	weather.input() = lambda: 'jkhkzdhkfhds'
+
+airport_name = StringIO('jkhkzdhkfhds')
+
+def test_2(monkeypatch):
+	
+	monkeypatch.setattr('sys.stdin', airport_name)
+
 	assert weather('jkhkzdhkfhds') == 'no airport found'
-	weather.input() = lambda: 'Hammer Airport'
+
+airport_name = StringIO('Hammer Airport')
+
+def test_3(monkeypatch):
+	
+	monkeypatch.setattr('sys.stdin', airport_name)
+
 	assert weather('Hammer Airport') != 'no airport found'
 	
