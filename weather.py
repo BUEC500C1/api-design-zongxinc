@@ -4,7 +4,7 @@ import csv
 import math
 from pprint import pprint
 
-def weather():
+def main():
 
 	airport_name = input('enter the airport name: ')
 
@@ -52,13 +52,13 @@ def weather():
 
 	count = 1
 
-	if weather() == 'no airport found':
+	if main() == 'no airport found':
 	
 		print('no airport found')
 
 	else:
 
-		for elements in weather():
+		for elements in main():
 
 			print('date: ' + elements['properties']['timestamp'][0:10] + '  ' + 'time: '+ elements['properties']['timestamp'][11:16] + '  ' + 'temperature: ' + str(math.trunc(elements['properties']['temperature']['value'])) + ' Celsius')
 
@@ -69,6 +69,6 @@ def weather():
 				break
 
 if __name__ == '__main__':
-	weather()
+	main()
 
 #return 1
