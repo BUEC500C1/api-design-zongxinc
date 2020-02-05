@@ -20,11 +20,11 @@ def test_2(monkeypatch):
 
 	assert main() == 'no airport found'
 
-airport_name2 = StringIO('Hammer Airport')
+airport_name2 = StringIO('Hammer Airport\n')
 
 def test_3(monkeypatch):
 
 	monkeypatch.setattr('sys.stdin', airport_name2)
 
-	assert weather('Hammer Airport') != 'no airport found'
+	assert main() != 'no airport found'
 	
