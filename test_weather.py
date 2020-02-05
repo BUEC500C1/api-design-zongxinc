@@ -1,13 +1,14 @@
-import weather
+from io import StringIO
+from weather import weather
 
-#airport_name = StringIO('York Airport')
+airport_name = StringIO('York Airport\n')
 
 def test_1(monkeypatch):
 
-	input_values = 'York Airport\n'
+	#input_values = 'York Airport\n'
  
-	weather.input = input_values
-	#monkeypatch.setattr('sys.stdin', airport_name)
+	#weather.input = input_values
+	monkeypatch.setattr('sys.stdin', airport_name)
 
 	assert weather.main() != 'no airport found'
 
@@ -26,4 +27,4 @@ def test_1(monkeypatch):
 	#monkeypatch.setattr('sys.stdin', airport_name)
 
 	#assert weather('Hammer Airport') != 'no airport found'
-	#from io import StringIO
+	
