@@ -1,7 +1,7 @@
 from io import StringIO
 from weather import weather
 
-airport_name = StringIO('York Airport\n')
+airport_name = StringIO('York Airport')
 
 def test_1(monkeypatch):
 
