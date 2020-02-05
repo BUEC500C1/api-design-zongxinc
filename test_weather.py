@@ -4,7 +4,7 @@ from weather import weather
 
 def test_1(monkeypatch):
 
-	input_values = 'York Airport'
+	input_values = 'York Airport\n'
  
 	weather.input = input_values
 	#monkeypatch.setattr('sys.stdin', airport_name)

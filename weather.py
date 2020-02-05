@@ -4,8 +4,6 @@ import csv
 import math
 from pprint import pprint
 
-
-
 def weather():
 
 	airport_name = input('enter the airport name: ')
@@ -50,24 +48,23 @@ def weather():
 
 	data = res.json()
 
-	return data['features']
+	count = 1
 
-count = 1
-
-if weather() == 'no airport found':
+	if weather() == 'no airport found':
 	
-	print('no airport found')
+		print('no airport found')
 
-else:
+	else:
 
-	for elements in weather():
+		for elements in weather():
 
-		print('date: ' + elements['properties']['timestamp'][0:10] + '  ' + 'time: '+ elements['properties']['timestamp'][11:16] + '  ' + 'temperature: ' + str(math.trunc(elements['properties']['temperature']['value'])) + ' Celsius')
+			print('date: ' + elements['properties']['timestamp'][0:10] + '  ' + 'time: '+ elements['properties']['timestamp'][11:16] + '  ' + 'temperature: ' + str(math.trunc(elements['properties']['temperature']['value'])) + ' Celsius')
 
-		count = count + 1
+			count = count + 1
 
-		if count > 24:
+			if count > 24:
 
-			break
+				break
+	return 1
 
 #return 1
