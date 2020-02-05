@@ -4,9 +4,11 @@ import csv
 import math
 from pprint import pprint
 
-airport_name = input('enter the airport name: ')
 
-def weather(airport_name):
+
+def weather():
+
+	airport_name = input('enter the airport name: ')
 
 	latitude = 0
 
