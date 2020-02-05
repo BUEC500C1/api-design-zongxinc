@@ -1,4 +1,4 @@
-from io import StringIO
+#from io import StringIO
 from weather import weather
 
 #airport_name = StringIO('York Airport')
