@@ -12,7 +12,7 @@ def test_1(monkeypatch):
 
 	assert main() != 'no airport found'
 
-airport_name = StringIO('jkhkzdhkfhds')
+airport_name = StringIO('jkhkzdhkfhds\n')
 
 def test_2(monkeypatch):
 	
